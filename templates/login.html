@@ -1,0 +1,27 @@
+{{ template "header" . }}
+<div class="row h-100 justify-content-center align-items-center">
+    <div class="col-4 p-4 rounded border border-info">
+        <form class="text-center" action="/auth/login" method="post">
+            <div class="form-group">
+                <label for="us_name">Имя пользователя</label>
+                <input class="form-control" type="text" name="username" id="us_name">
+            </div>
+            <div class="form-group">
+                <label for="pwd_1">Пароль</label>
+                <input class="form-control" type="password" name="password" id="pwd_1">
+            </div>
+            <div class="row justify-content-center align-items-center">
+                <button class="btn btn-info" type="submit">Войти</button>
+                <p class="text-justify mb-0 mr-1 ml-1">или</p>
+                <a class="font-weight-bold" href="/auth/registration">зарегистрируйтесь</a>
+            </div>
+            <div class="error">
+                {{ .error }}
+            </div>
+            <div class="message">
+                {{ .message }}
+            </div>
+        </form>
+    </div>
+</div>
+{{ template "footer" . }}
